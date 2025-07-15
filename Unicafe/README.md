@@ -1,12 +1,29 @@
-# React + Vite
+# Unicafe – Feedback App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React application for collecting feedback at a university restaurant. Users can rate their experience as **good**, **neutral**, or **bad**.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Three feedback options: good, neutral, bad
+- Shows:
+  - Count of each feedback 
+  - Average score
+  - Percentage of positive feedback
+- Displays statistics only after feedback is given
+- Modular components:
+  - `Button`
+  - `Statistics`
+  - `StatisticLine`
+- Statistics are shown in a table
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React with Hooks
+- JavaScript
+- Vite (for development)
+
+## Run the App
+
+```bash
+npm install
+npm run dev
