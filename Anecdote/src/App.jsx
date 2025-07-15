@@ -1,7 +1,22 @@
 import { useState } from 'react'
+
 const getRandomNum = (max)=>{
     return Math.floor(Math.random()*max);
 }
+
+const MostVoteAnecdote = (props) =>{
+  const{votes , anecdotes} = props;
+  const maxVotes = Math.max(...votes);
+  const maxIndex = votes.indexOf(maxVotes);
+  return(
+    <>
+      {anecdotes[maxIndex]}
+      <br />
+      has {maxVotes} votes
+    </>
+  )
+}
+
 const App = () => {
   const anecdotes = [
     'If it hurts, do it more often.',
@@ -23,12 +38,19 @@ const App = () => {
   }
   return (
     <>
+    <h1>Anecdote of the day</h1>
     <div>
       {anecdotes[selected]}<br/>
       has {votes[selected]} votes
     </div>
     <button onClick={handleVote}>Vote</button>
     <button onClick={()=>{setSelected(getRandomNum(8))}}>Next Anecdote</button>
+    
+    <h1>Anecdote with most votes</h1>
+    <div>
+       <MostVoteAnecdote votes = {votes} anecdotes = {anecdotes}/> 
+    </div>
+    
     </>
   )
 }
